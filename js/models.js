@@ -56,6 +56,7 @@ function valorQuinzeDias(){
          
          });
          novoGrafico(valores)
+         console.log(valore)
     }
     ajax1.send()
 }
