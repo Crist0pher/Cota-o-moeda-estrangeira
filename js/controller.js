@@ -1,5 +1,6 @@
-
 let ajax = new XMLHttpRequest();
+let ajax1 = new XMLHttpRequest();
+
 
 var moeda = 'USD-BRL'
 var conteudo = []
@@ -17,10 +18,11 @@ ajax.onreadystatechange = function(){
     
     pctChange(conteudo.USD.pctChange)
 
-
+   
 
    // console.log(conteudo.USD.bid.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
 }
 ajax.send()
 
 
+valorQuinzeDias()

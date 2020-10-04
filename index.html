@@ -37,10 +37,10 @@
   
       <label for="cars" class="my-0 mr-md-auto font-weight-normal">Escolha a moeda:</label>
   <select name="moeda" id="moeda" class="my-0 mr-md-auto font-weight-normal">
-    <option value="volvo">Dólar</option>
-    <option value="saab">Euro</option>
-    <option value="mercedes">Libra</option>
-    <option value="audi">Peso</option>
+    <option value="Dolar">Dólar</option>
+    <option value="Euro">Euro</option>
+    <option value="Libra">Libra</option>
+    <option value="Peso">Peso</option>
   </select>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="#">Features</a>
@@ -72,7 +72,7 @@
         <h4 class="my-0 font-weight-normal">Menor valor do dia</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title"  id="low">$15 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title"  id="low">$0 <small class="text-muted">/ mo</small></h1>
         
       </div>
     </div>
@@ -81,12 +81,17 @@
         <h4 class="my-0 font-weight-normal">Variação</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title" id="pctChange">$29 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title" id="pctChange">$0 <small class="text-muted">/ mo</small></h1>
        
       </div>
     </div>
   </div>
-
+  <canvas id="myChart" width="400" height="400"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script>
+    
+    
+  </script>
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
       <div class="col-12 col-md">
@@ -127,7 +132,11 @@
 
 </div>
 <!--<script src="controllers/getValues.js"></script>-->
-<script src="js/controller.js"></script>
+<script src="js/grafico.js"></script>
+<script src="node_modules/chart.js/dist/Chart.js"></script>
+
 <script src="js/models.js"></script>
+<script src="js/controller.js"></script>
+
 </body>
 </html>

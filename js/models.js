@@ -38,3 +38,24 @@ function pctChange(moeda){
   
     valor.innerHTML = (moeda)
 }
+
+function valorQuinzeDias(){
+
+    
+    ajax1.open('GET','https://economia.awesomeapi.com.br/json/daily/USD-BRL/7');
+
+    ajax1.onreadystatechange = function(){
+
+        var cincoDias = Array.prototype.slice.call(JSON.parse(ajax1.responseText))
+        //console.log(dias)
+        var valores = []
+        var dias =[]
+        console.log(cincoDias)
+        cincoDias.forEach(valorAtual => {
+         valores.push(valorAtual.ask)
+         
+         });
+         novoGrafico(valores)
+    }
+    ajax1.send()
+}
