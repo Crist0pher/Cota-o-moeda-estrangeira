@@ -36,12 +36,16 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   
       <label for="cars" class="my-0 mr-md-auto font-weight-normal">Escolha a moeda:</label>
-  <select name="moeda" id="moeda" class="my-0 mr-md-auto font-weight-normal">
-    <option value="Dolar">Dólar</option>
-    <option value="Euro">Euro</option>
-    <option value="Libra">Libra</option>
-    <option value="Peso">Peso</option>
+  
+  <select name="moeda"  class="my-0 mr-md-auto font-weight-normal" id="moeda">
+
+    <option value="Dolar" class="moeda">Dólar</option>
+    <option value="Euro" class="moeda">Euro</option>
+    <option value="Libra" class="moeda">Libra</option>
+    <option value="Peso" class="moeda">Peso</option>
   </select>
+  
+  
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="#">Features</a>
     <a class="p-2 text-dark" href="#">Enterprise</a>
@@ -128,10 +132,9 @@
   </footer>
 
 </div>
-<!--<script src="controllers/getValues.js"></script>-->
+
 <script src="js/grafico.js"></script>
 <script src="node_modules/chart.js/dist/Chart.js"></script>
-
 <script src="js/models.js"></script>
 <script src="js/controller.js"></script>
 

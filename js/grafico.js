@@ -4,6 +4,8 @@ function novoGrafico(valor){
 var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'line',
+      pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+
       data: {
           labels: ['-6','-5', '-4', '-3', '-2', '-1', '0'],
           datasets: [{
@@ -25,9 +27,11 @@ var ctx = document.getElementById('myChart').getContext('2d');
           scales: {
               yAxes: [{
                   ticks: {
-                      beginAtZero: true
+                      beginAtZero: false,
+                      
                   }
-              }]
+              }],
+              
           }
       }
   });

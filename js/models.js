@@ -49,14 +49,27 @@ function valorQuinzeDias(){
         var cincoDias = Array.prototype.slice.call(JSON.parse(ajax1.responseText))
         //console.log(dias)
         var valores = []
-        var dias =[]
-        console.log(cincoDias)
+      
+        
         cincoDias.forEach(valorAtual => {
          valores.push(valorAtual.ask)
          
          });
          novoGrafico(valores)
-         console.log(valore)
+         
     }
     ajax1.send()
+}
+
+function selectMoeda(){
+
+    var conteudo;
+   
+    document.getElementById("moeda").addEventListener("click",()=>{
+        conteudo = document.getElementById("moeda")
+        console.log(conteudo.value)
+    })
+
+    
+
 }

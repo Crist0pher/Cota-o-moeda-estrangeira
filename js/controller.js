@@ -24,5 +24,5 @@ ajax.onreadystatechange = function(){
 }
 ajax.send()
 
-
 valorQuinzeDias()
+selectMoeda()
