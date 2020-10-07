@@ -1,3 +1,42 @@
+
+function requisicao(moeda){
+    let ajax = new XMLHttpRequest();
+    ajax.open('GET','https://economia.awesomeapi.com.br/json/all');
+    
+    ajax.onreadystatechange = function(){
+    
+        conteudo = JSON.parse(ajax.responseText)
+       
+        switch(moeda){
+            case 'USD':
+            conteudo = conteudo.USD
+            break;
+            case 'EUR':
+            conteudo = conteudo.EUR
+            break;
+            case 'GBP':
+            conteudo = conteudo.GBP
+            break;
+            case 'ARS':
+            conteudo = conteudo.ARS
+            break;
+            default:
+               conteudo = conteudo.USD
+        }
+      
+        ValorCompra(conteudo.ask)
+        naAlta(conteudo.high)
+        Name(conteudo.name)
+        Low(conteudo.low)
+        pctChange(conteudo.pctChange)
+       // console.log(conteudo.USD.bid.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+    }
+    ajax.send()
+    
+ 
+    }
+
+
 function ValorCompra(moeda){
 
     var valor = document.getElementById('compra')
@@ -21,11 +60,6 @@ function Name(moeda){
     valor.innerHTML = (moeda)
 }
 
-function High(moeda){
-    var valor = document.getElementById('name')
-    preco = Number(moeda).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    valor.innerHTML = (preco)
-}
 
 function Low(moeda){
     var valor = document.getElementById('low')
@@ -65,9 +99,12 @@ function selectMoeda(){
 
     var conteudo;
    
-    document.getElementById("moeda").addEventListener("click",()=>{
+    document.getElementById("moeda").addEventListener("change",()=>{
         conteudo = document.getElementById("moeda")
+        requisicao(conteudo.value)
+
         console.log(conteudo.value)
+        console.log(typeof(conteudo))
     })
 
     
