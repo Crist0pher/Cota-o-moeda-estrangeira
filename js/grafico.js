@@ -9,7 +9,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
       data: {
           labels: ['-6','-5', '-4', '-3', '-2', '-1', '0'],
           datasets: [{
-              label: 'Valor',
+              label: 'Histórico dos últimos 7 dias',
               data: valor,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
