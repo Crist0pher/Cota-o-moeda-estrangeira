@@ -1,10 +1,13 @@
 
+// Para a geração do gráfico foi utilizado a biblioteca Char.js.
+
+
 function novoGrafico(valor){
     var dia = new Date
     var dias = []
     
 
-    for (var i = 7; i >= 0; i --) {
+    for (var i = 6; i >= 0; i --) {
 
         dias.push(dia.getDate()-i)
         console.log(i)
