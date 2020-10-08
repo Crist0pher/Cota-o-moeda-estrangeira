@@ -1,13 +1,22 @@
 
 function novoGrafico(valor){
+    var dia = new Date
+    var dias = []
+    
 
+    for (var i = 7; i >= 0; i --) {
+
+        dias.push(dia.getDate()-i)
+        console.log(i)
+        
+    }
 var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'line',
       pointBackgroundColor: 'rgba(255, 99, 132, 1)',
 
       data: {
-          labels: ['-6','-5', '-4', '-3', '-2', '-1', '0'],
+          labels: dias,
           datasets: [{
               label: 'Histórico dos últimos 7 dias',
               data: valor,

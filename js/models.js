@@ -88,23 +88,30 @@ function valorQuinzeDias(moeda){
        moeda = 'ARS-BRL'
     break
     default:
-}
+    }
+    
 
 
+    
     ajax1.open('GET', 'https://economia.awesomeapi.com.br/json/daily/' + moeda + '/7');
 
     ajax1.onreadystatechange = function(){
 
-        var cincoDias = Array.prototype.slice.call(JSON.parse(ajax1.responseText))
-        //console.log(dias)
-        var valores = []
-      
+        var ultimos7dias = Array.prototype.slice.call(JSON.parse(ajax1.responseText))
         
-        cincoDias.forEach(valorAtual => {
+      
+        var valores = []
+
+        
+        ultimos7dias.forEach(valorAtual => {
          valores.push(valorAtual.ask)
          
-         });
-         novoGrafico(valores)
+         
+
+        });
+       
+        valores.push(ultimos7dias[0].ask)
+        novoGrafico(valores)
          
     }
     ajax1.send()
