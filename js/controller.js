@@ -6,5 +6,5 @@ var moeda = 'USD'
 var conteudo = []
 
 requisicao(moeda)
-valorQuinzeDias()
+valorQuinzeDias(moeda)
 selectMoeda()

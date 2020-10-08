@@ -73,10 +73,25 @@ function pctChange(moeda){
     valor.innerHTML = (moeda)
 }
 
-function valorQuinzeDias(){
+function valorQuinzeDias(moeda){
+    //console.log(moeda)
+   
+   switch(moeda){
+   case moeda == 'EUR':
+       console.log(ok)
+       moeda = 'EUR-BRL'
+    break
+    case moeda == 'GBW':
+       moeda = 'GBP-BRL'
+    break
+    case moeda == 'ARS':
+       moeda = 'ARS-BRL'
+    break
+    default:
+}
 
-    
-    ajax1.open('GET','https://economia.awesomeapi.com.br/json/daily/USD-BRL/7');
+
+    ajax1.open('GET', 'https://economia.awesomeapi.com.br/json/daily/' + moeda + '/7');
 
     ajax1.onreadystatechange = function(){
 
@@ -102,9 +117,9 @@ function selectMoeda(){
     document.getElementById("moeda").addEventListener("change",()=>{
         conteudo = document.getElementById("moeda")
         requisicao(conteudo.value)
+        valorQuinzeDias(conteudo.value)
 
-        console.log(conteudo.value)
-        console.log(typeof(conteudo))
+       
     })
 
     
