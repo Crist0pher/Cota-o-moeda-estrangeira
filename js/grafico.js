@@ -23,15 +23,9 @@ var ctx = document.getElementById('myChart').getContext('2d');
           datasets: [{
               label: 'Histórico dos últimos 7 dias',
               data: valor,
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-           
-              ],
-              borderColor: [
-                'rgba(255, 99, 132, 1)',
-                  
-              ],
-              
+              backgroundColor: 'transparent',
+              borderColor: '#007bff',   
+              lineTension: 0,
               borderWidth: 6
           }]
       },
