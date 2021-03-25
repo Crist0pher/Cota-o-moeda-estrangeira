@@ -3,7 +3,7 @@
 //Arquivo com funções necessárias para a exercuão da aplicação.
 
 
-// A função requiscao() fazer uma request para a API economia.awesomeapi, solicitando todas as moedas disponívels e armazena em um vetor, e utiliza 
+// A função requiscao() faz uma request para a API economia.awesomeapi solicitando todas as moedas disponívels e armazena em um vetor,  utiliza 
 //o paramentro "moeda" para pesquisar dentro do vetor a moeda solicitada pelo usuário.
 
 let ajax1 = new XMLHttpRequest();
@@ -21,7 +21,6 @@ function requisicao(moeda){
     ajax.onreadystatechange = function(){
     
         // Recebendo o valor retornado da request e criando um objeto para melhor manipulação
-
         conteudo = JSON.parse(ajax.responseText)
        
         // o Switch abaixo recebe o paramentro 'moeda' e realiza a busca dentro do objecto conteúdo correto a ser exibido
@@ -98,13 +97,14 @@ function pctChange(moeda){
 // A função abaixo realiza uma request diferente da anterior, nessa é solicitado o histórico da cotação da moeda solicitada nos últimos 7 dias.
 
 function valorQuinzeDias(moeda){
-   
+    console.log(moeda)
+
    switch(moeda){
     case moeda == 'EUR':
         moeda = 'EUR-BRL'
     break;
     
-    case moeda == 'GBW':
+    case moeda == 'GBP':
        moeda = 'GBP-BRL'
     break;
 
@@ -112,12 +112,11 @@ function valorQuinzeDias(moeda){
         moeda = 'ARS-BRL'
     break;
     default:
-        moeda = 'USD-BRL'
+//        moeda = 'USD-BRL'
     }
     
-  
+   
     ajax1.open('GET', 'https://economia.awesomeapi.com.br/json/daily/' + moeda + '/7');
-
     // Nas próximas linhas o retorno da requisição foi transformado em um array, e em seguida criado um novo array para receber somente os valores necessários
     // e ecanimhar para a função que gera o gráfrico.
 
@@ -126,25 +125,24 @@ function valorQuinzeDias(moeda){
         
     
         var ultimos7dias = Array.prototype.slice.call(JSON.parse(ajax1.responseText))
-        
-      
+        console.log(ultimos7dias)
         var valores = []
 
         // ness trecho é criado um array para receber somente os valores da cotação dentro do array de objetos
         ultimos7dias.forEach(valorAtual => {
             valores.push(valorAtual.ask)
         });
-       
+       //console.log(valores)
 
-        console.log(valores)
+        //console.log(valores)
         // Aqui e feito a chamada para a criação do gráfico, e feita a reversão do array para que os valores fiquem de acordo com o dia.
         novoGrafico(valores.reverse())
          
+        }
+        ajax1.send()
     }
-    ajax1.send()
-}
 
-    // A função SelectMoeda adicionar o evento "change" ao combobox para quando ouver alteração da realizar novamente a request.
+    // A função SelectMoeda adicionar o evento "change" ao combobox para quando houver alteração realizar novamente a request.
 
 function selectMoeda(){
 
@@ -154,7 +152,7 @@ function selectMoeda(){
         conteudo = document.getElementById("moeda")
         requisicao(conteudo.value)
         valorQuinzeDias(conteudo.value)
-
+        console.log(conteudo.value)
        
     })
 

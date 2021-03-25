@@ -10,7 +10,7 @@ function novoGrafico(valor){
     for (var i = 6; i >= 0; i --) {
 
         dias.push(dia.getDate()-i)
-        console.log(i)
+        //console.log(i)
         
     }
 var ctx = document.getElementById('myChart').getContext('2d');
